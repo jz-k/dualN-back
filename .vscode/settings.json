@@ -1,3 +1,4 @@
 {
-	"liveServer.settings.multiRootWorkspaceName": "nBack"
+	"liveServer.settings.multiRootWorkspaceName": "nBack",
+	"liveServer.settings.port": 5501
 }
