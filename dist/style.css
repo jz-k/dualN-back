@@ -94,6 +94,9 @@ header {
 	width: 100px;
 	height: 100px;
 	position: absolute;
+	/* accounts for the thickness of the border */
+	top: -8px;
+	left: -8px;
 	border-right: 8px solid transparent;
 	border-left: 8px solid transparent;
 	border-radius: 50%;
