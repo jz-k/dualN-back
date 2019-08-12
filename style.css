@@ -19,6 +19,8 @@ body {
 	z-index: 0;
 	position: relative;
 	height: 100vh;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
 main {
@@ -70,6 +72,7 @@ header {
 	border-radius: 50%;
 	text-align: center;
 	color: #222;
+	text-shadow: none;
 }
 
 .play {
@@ -103,7 +106,7 @@ header {
 	width: 300vw;
 	top: 0;
 	z-index: 0;
-	animation: 5s cubic-bezier(.9, 1, .7, 1) swipe;
+	animation: 5s cubic-bezier(0.9, 1, 0.7, 1) swipe;
 	clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
