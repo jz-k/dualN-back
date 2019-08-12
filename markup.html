@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css"></link>
+	<title>Dual N-Back</title>
+</head>
+<body>
+	<main>
+		<header>
+			<h1>dual n-back</h1>
+			<p class="stage-notice">remember %n back (from last displayed number)</p>
+			<sub class="high-score" aria-role="high-score">no high score recorded</sub>
+		</header>
+		<section class="game">
+			<div class="card" role="game-card"></div>
+			<form class="game-form hide">
+				<input type="text" class="number-input" aria-label="number-input"></input>
+				<select class="color-selector"></select>
+				<button class="submit-guess">Submit</button>
+			</form>
+			<section>
+				<div class="result" aria-role="game-results"></div>
+			</section>
+			<form>
+				<button class="play">Play?</button>
+			</form>
+		</section>
+		<div class="animation-container" aria-role="decoration"></div>
+	</main>
+</body>
+<script src="script.js"></script>
+</html>

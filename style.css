@@ -1,0 +1,128 @@
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	box-sizing: border-box;
+	text-transform: lowercase;
+	background-color: #444;
+	color: #fdfdfd;
+	overflow: hidden;
+	font-family: "Lexend Exa", sans-serif;
+}
+
+select,
+input {
+	width: 200px;
+	display: block;
+	text-align: center;
+	margin: 10px 0;
+	box-sizing: border-box;
+	border-radius: 2px;
+}
+
+button {
+	cursor: pointer;
+	padding: 8px 12px;
+	border: 1px solid black;
+	font-weight: bold;
+	background-color: #fff;
+	font-family: "Lexend Exa", sans-serif;
+}
+
+header {
+	margin-bottom: 20px;
+}
+
+.game {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	height: 100px;
+	width: 100px;
+	background-color: black;
+	margin: 20px 0;
+	font-size: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.2s;
+	border-radius: 50%;
+	text-align: center;
+	color: #222;
+}
+
+.play {
+	margin: 10px;
+	border-radius: 2px;
+}
+
+.result {
+	margin: 20px;
+}
+
+.change::after {
+	content: "";
+	border: 8px solid #222;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+.hide {
+	display: none;
+}
+
+.win {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: -2000px;
+	animation: 2s ease-in-out swipe;
+}
+
+@keyframes spin {
+	0% {
+		opacity: 0;
+		transform: rotateZ(0deg);
+	}
+	20% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		transform: rotateZ(540deg);
+		opacity: 0;
+	}
+}
+
+@keyframes swipe {
+	0% {
+	}
+
+	40% {
+	}
+
+	60% {
+	}
+
+	100% {
+	}
+}
