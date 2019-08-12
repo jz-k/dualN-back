@@ -130,7 +130,7 @@ function getHighScore() {
 	// if a high score exists, update the high score text
 	if (localStorage.getItem("highScore")) {
 		const recordedHighScore = localStorage.getItem("highScore");
-		highScore.textContent = `Current high score is ${recordedHighScore}`;
+		highScore.textContent = `(Current best is ${recordedHighScore}-back)`;
 	}
 }
 
@@ -156,6 +156,17 @@ submitButton.addEventListener("click", (e) => {
 		selectedNumberMatchesTargetNumber &&
 		selectedColorMatchesTargetColor
 	) {
+		// if there is no recorded best, or if the recorded best is lower than the latest successful current value, update the record in local storage
+		if (
+			!localStorage.getItem("highScore") ||
+			Number(localStorage.getItem("highScore")) < currentBackValue
+		) {
+			localStorage.setItem(
+				"highScore",
+				currentBackValue
+			);
+		}
+
 		currentBackValue++;
 		noticeString = noticeString.replace(currentBackValue - 1, currentBackValue);
 		stageNotice.textContent = noticeString;
@@ -170,11 +181,6 @@ submitButton.addEventListener("click", (e) => {
 		}, 3500);
 
 		resultElement.textContent = "Nice work";
-
-		localStorage.setItem(
-			"highScore",
-			currentBackValue
-		);
 
 		getHighScore();
 
