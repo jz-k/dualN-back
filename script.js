@@ -18,7 +18,7 @@ const resultElement = document.querySelector('.result');
 const gameForm = document.querySelector('.game-form');
 // the "play" button
 const playButton = document.querySelector('.play');
-// the high score div (should be empty if no high score has been recorded)
+// the high score notice (should notify if no high score is recorded)
 const highScore = document.querySelector('.high-score');
 // the array of possible numbers to remember (gets built when play button is clicked)
 let possibleNumbers = [];
@@ -166,7 +166,8 @@ submitButton.addEventListener("click", (e) => {
 
 		setTimeout(() => {
 			animationContainer.classList.remove("win");
-		}, 2000);
+			playButton.classList.remove("hide");
+		}, 3500);
 
 		resultElement.textContent = "Nice work";
 
@@ -182,14 +183,14 @@ submitButton.addEventListener("click", (e) => {
 		console.log({ [selectedNumber]: selectedColor });
 		console.groupEnd();
 		console.group("The target");
-		console.log(cards[indexToCheck]);
+		console.log({ [targetNumber]: targetColor });
 		console.groupEnd();
 
 		resultElement.textContent = "Didn't get that one. Try again.";
+		playButton.classList.remove("hide");
 	}
 
 	gameForm.classList.add("hide");
-	playButton.classList.remove("hide");
 });
 
 playButton.addEventListener("click", (e) => {
